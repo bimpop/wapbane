@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Slider</title>
+</head>
+
+<body>
+<div style="text-align:center;">
+<button onclick="prev()">prev</button>
+<img id="slider" src="images/flaves.jpg" width="320px" height="180px">
+<button onclick="next()">next</button>
+</div>
+
+<script>
+	
+	var images = ["images/flaves.jpg","images/mech.png","images/passport.jpg"];
+	var num = 0;
+
+function next() {
+  var slider = document.getElementById("slider");
+  num++;
+  if(num >= images.length) {
+    num = 0;
+  }
+  slider.src = images[num];
+  }
+
+function prev() {
+  var slider = document.getElementById("slider");
+  num--;
+  if(num < 0) {
+    num = images.length-1;
+  }
+  slider.src = images[num];
+}
+
+</script>
+</body>
+</html>
